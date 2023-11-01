@@ -1,0 +1,28 @@
+/* mobile.css */
+
+/* Adjust font sizes for smaller screens */
+.container {
+    padding: 10px;
+}
+
+.question {
+    font-size: 16px;
+}
+
+.answer-input,
+.submit-button {
+    font-size: 14px;
+}
+
+.result {
+    font-size: 16px;
+}
+
+/* Adjust spacing or layout as needed for mobile */
+/* Example: Stack buttons vertically */
+.submit-button {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Additional mobile-specific styles can be added here */
