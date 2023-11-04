@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to your primary CSS file -->
     <link rel="stylesheet" type="text/css" href="mobile.css"> <!-- Link to the mobile CSS file -->
 </head>
-    <title>Quiz Page</title>
+    <title>Computer Programming</title>
     <style>
         /* Styles (same as before) */
         body {
@@ -137,7 +137,7 @@
 "A line of code that represents a command or action. The statements we have seen are declarations, assignments, and output statements. - Statement",
 "A statement that creates a new variable and determines its type. - Declaration",
 "A statement that assigns a value to a variable. - Assignment",
-"A combination of variables, operators, and values that represents a single result value. Expressions also have types determined by their operators and operands. - Expression",
+"A combination of variables, operators, and values that represents a single result value. - Expression",
 "A special symbol that represents a simple computation like addition or multiplication. - Operator",
 "One of the values on which an operator operates. - Operand",
 "The order in which operations are evaluated. - Precedence",
@@ -188,7 +188,7 @@
 "A function that operates on an object that is passed as an implicit parameter named this. - Member function",
 "A function that is not a member of any structure definition. Also called a 'free-standing' function. - Nonmember function",
 "To call a function 'on' an object, in order to pass the object as an implicit parameter. - Invoke",
-"The object on which a member function is invoked. Inside the member function, we can refer to the current object implicitly, or by using the keyword this. - Current object",
+"The object on which a member function is invoked. - Current object",
 "A keyword that refers to the current object. this is a pointer, which makes it difficult to use, since we do not cover pointers in this book. - This",
 "A description of how a function is used, including the number and types of the parameters and the type of the return value. - Interface",
 "A statement that declares the interface to a function without providing the body. Declarations of member functions appear inside structure definitions even if the definitions appear outside. - Function declaration",
@@ -257,7 +257,20 @@
                 `;
             }
         }
+        function displayWrongAnswers() {
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = `<h2>Wrong Answers</h2>`;
 
+            for (let i = 0; i < wrongAnswers.length; i++) {
+                resultContainer.innerHTML += `
+                    <p>Question ${i + 1}: ${wrongAnswers[i].question}</p>
+                    <p>Your Answer: ${wrongAnswers[i].yourAnswer}</p>
+                    <p>Correct Answer: ${wrongAnswers[i].correctAnswer}</p>
+                    <p>Incorrect</p>
+                    <hr>
+                `;
+            }
+        }
         function reviewPrevious() {
             if (reviewIndex >= 0) {
                 currentIndex = reviewIndex; // Set currentIndex to the reviewIndex
